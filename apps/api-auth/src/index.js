@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import {setupDatabase} from "@supunreal/database";
 import dotenv from 'dotenv';
+import authRouter from "./router/auth.js";
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -24,6 +25,8 @@ if (process.env.NODE_ENV !== 'production') {
   app.get('/auth', (req, res) => {
     return res.json({message: 'Welcome to API-AUTH !'});
   });
+
+  app.use('/auth', authRouter);
 
   const port = 3001;
   app.listen(port, () => {

@@ -13,6 +13,9 @@ importers:
       '@supunreal/database':
         specifier: workspace:^1.0.0
         version: link:../../libs/database
+      '@supunreal/validation':
+        specifier: workspace:^1.0.0
+        version: link:../../libs/validation
       cookie-parser:
         specifier: ^1.4.6
         version: 1.4.6
@@ -50,6 +53,12 @@ importers:
       mongoose:
         specifier: ^7.0.4
         version: 7.0.4
+
+  libs/validation:
+    dependencies:
+      joi:
+        specifier: ^17.9.1
+        version: 17.9.1
 
 packages:
 
