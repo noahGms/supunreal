@@ -191,6 +191,9 @@ importers:
       '@capacitor/app':
         specifier: 5.0.3
         version: 5.0.3(@capacitor/core@5.0.5)
+      '@capacitor/camera':
+        specifier: 5.0.4
+        version: 5.0.4(@capacitor/core@5.0.5)
       '@capacitor/core':
         specifier: 5.0.5
         version: 5.0.5
@@ -218,6 +221,9 @@ importers:
       ionicons:
         specifier: ^7.0.0
         version: 7.1.2
+      uuid:
+        specifier: ^9.0.0
+        version: 9.0.0
       vue:
         specifier: ^3.2.45
         version: 3.3.4
@@ -1490,6 +1496,14 @@ packages:
 
   /@capacitor/app@5.0.3(@capacitor/core@5.0.5):
     resolution: {integrity: sha512-YqGWnD+O8wjNVyIctZCMkVqOr3RhxunLUBbmLpdRc66RzPN7xEk8GAwxY2YV/ehTL054mo3uqovpWvei7rYsEA==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
+    dependencies:
+      '@capacitor/core': 5.0.5
+    dev: false
+
+  /@capacitor/camera@5.0.4(@capacitor/core@5.0.5):
+    resolution: {integrity: sha512-Sl4PpoRv/FahCTugjyCZQ8MMH9Tgh5ySr8ZqY59mFKReoCu7xKnp9Ue8D8mzR9nE08gRiUBMqtl5FJbJR2f+Yg==}
     peerDependencies:
       '@capacitor/core': ^5.0.0
     dependencies:

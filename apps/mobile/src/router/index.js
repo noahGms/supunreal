@@ -25,6 +25,11 @@ const routes = [
         name: 'Profile',
         component: () => import('@/views/ProfilePage.vue'),
       },
+      {
+        path: 'new-post',
+        name: 'NewPost',
+        component: () => import('@/views/NewPostPage.vue'),
+      },
     ],
   },
   {

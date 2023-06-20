@@ -8,6 +8,11 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
+        <ion-tab-button tab="new-post" href="/new-post">
+          <ion-icon :icon="addCircle" />
+          <ion-label>New Post</ion-label>
+        </ion-tab-button>
+
         <ion-tab-button tab="profile" href="/profile">
           <ion-icon :icon="personCircleOutline" />
           <ion-label>Profile</ion-label>
@@ -27,6 +32,6 @@ import {
   IonIcon,
   IonLabel
 } from '@ionic/vue';
-import { home, personCircleOutline } from 'ionicons/icons';
+import { home, personCircleOutline, addCircle } from 'ionicons/icons';
 </script>
 
