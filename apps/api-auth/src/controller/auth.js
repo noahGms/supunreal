@@ -1,7 +1,7 @@
 import {User} from "@supunreal/database";
 import jwt from "jsonwebtoken";
 import {loginSchema, registerSchema} from "@supunreal/validation";
-import userMapper from "../mapper/user.js";
+import {userMapper} from "@supunreal/mapper";
 
 export async function register(req, res) {
   const body = req.body;

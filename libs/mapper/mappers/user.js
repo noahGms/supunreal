@@ -7,4 +7,4 @@ const userMapper = (user) => ({
   updated_at: user.updatedAt,
 });
 
-export default userMapper;
+export {userMapper};
