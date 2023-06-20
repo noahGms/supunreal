@@ -200,6 +200,9 @@ importers:
       '@capacitor/keyboard':
         specifier: 5.0.4
         version: 5.0.4(@capacitor/core@5.0.5)
+      '@capacitor/preferences':
+        specifier: 5.0.4
+        version: 5.0.4(@capacitor/core@5.0.5)
       '@capacitor/status-bar':
         specifier: 5.0.4
         version: 5.0.4(@capacitor/core@5.0.5)
@@ -209,6 +212,9 @@ importers:
       '@ionic/vue-router':
         specifier: ^7.0.0
         version: 7.0.14
+      axios:
+        specifier: ^1.4.0
+        version: 1.4.0
       ionicons:
         specifier: ^7.0.0
         version: 7.1.2
@@ -218,6 +224,9 @@ importers:
       vue-router:
         specifier: ^4.1.6
         version: 4.2.2(vue@3.3.4)
+      vuex:
+        specifier: 4.1.0
+        version: 4.1.0(vue@3.3.4)
     devDependencies:
       '@capacitor/cli':
         specifier: 5.0.5
@@ -1529,6 +1538,14 @@ packages:
 
   /@capacitor/keyboard@5.0.4(@capacitor/core@5.0.5):
     resolution: {integrity: sha512-vIv2NLZRBXgMDkyZurFpANCe7pEbpChdXNGdQFnk1Kg31DFScgwmq4ednZwT4+SHojH6SHCXxaBPg7Y265LWVQ==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
+    dependencies:
+      '@capacitor/core': 5.0.5
+    dev: false
+
+  /@capacitor/preferences@5.0.4(@capacitor/core@5.0.5):
+    resolution: {integrity: sha512-GV3QysJ724GO/CE8KHRYdq8tpzCrJWKVtOJGkLoPt+qlr88SNN+ayNMXlZE1LCMJ5eevdWDreSjQXiYfkUvnoA==}
     peerDependencies:
       '@capacitor/core': ^5.0.0
     dependencies:
@@ -5925,6 +5942,15 @@ packages:
       '@vue/runtime-dom': 3.3.4
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
+
+  /vuex@4.1.0(vue@3.3.4):
+    resolution: {integrity: sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      vue: 3.3.4
+    dev: false
 
   /w3c-xmlserializer@4.0.0:
     resolution: {integrity: sha512-d+BFHzbiCx6zGfz0HyQ6Rg69w9k19nviJspaj4yNscGjrHu94sVP+aRm75yEbCh+r2/yR+7q6hux9LVtbuTGBw==}
