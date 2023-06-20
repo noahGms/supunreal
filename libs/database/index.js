@@ -5,6 +5,8 @@ export {Post} from './models/post.js';
 export {File} from './models/file.js';
 export {Comment} from './models/comment.js';
 export {Friendship} from './models/friendship.js';
+export {Conversation} from './models/conversation.js';
+export {Message} from './models/message.js';
 
 export async function setupDatabase(databaseUrl) {
   try {
