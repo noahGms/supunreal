@@ -55,10 +55,14 @@ router.beforeEach(async (to, from, next) => {
       }
     }
 
-    await store.dispatch("auth/whoami")
-    if (store.getters["auth/isLoggedIn"]) {
-      next();
-    } else {
+    try {
+      await store.dispatch("auth/whoami");
+      if (await store.getters["auth/isLoggedIn"]) {
+        next();
+      } else {
+        next({ name: "Login" });
+      }
+    } catch (error) {
       next({ name: "Login" });
     }
   } else {
