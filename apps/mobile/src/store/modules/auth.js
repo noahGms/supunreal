@@ -46,7 +46,7 @@ export const auth = {
       return new Promise((resolve, reject) => {
         axios.get(`${API_AUTH_URL}/whoami`)
           .then((response) => {
-            commit('setUser', response.data);
+            commit('setUser', response.data.data);
             commit('setLoggedIn', true);
 
             resolve(response);

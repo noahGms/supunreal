@@ -9,12 +9,23 @@ const routes = [
     redirect: '/home',
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: () => import('@/views/HomePage.vue'),
+    path: '/',
+    component: () => import('@/components/layouts/AuthenticatedLayout.vue'),
     meta: {
       requiresAuth: true,
     },
+    children: [
+      {
+        path: 'home',
+        name: 'Home',
+        component: () => import('@/views/HomePage.vue'),
+      },
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/ProfilePage.vue'),
+      },
+    ],
   },
   {
     path: '/register',
