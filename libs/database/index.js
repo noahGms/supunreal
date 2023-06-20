@@ -4,6 +4,7 @@ export {User} from './models/user.js';
 export {Post} from './models/post.js';
 export {File} from './models/file.js';
 export {Comment} from './models/comment.js';
+export {Friendship} from './models/friendship.js';
 
 export async function setupDatabase(databaseUrl) {
   try {
