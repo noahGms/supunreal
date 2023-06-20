@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pnpm --stream -r start",
-    "dev": "pnpm --stream -r run dev",
+    "api:start": "pnpm --filter \"!mobile\" --stream -r start",
+    "api:dev": "pnpm --filter \"!mobile\" --stream -r run dev",
+    "mobile:start": "pnpm --filter \"mobile\" --stream start",
+    "mobile:dev": "pnpm --filter \"mobile\" --stream run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
