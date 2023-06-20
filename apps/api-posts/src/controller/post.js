@@ -96,6 +96,12 @@ export async function update(req, res) {
       });
     }
 
+    if (post.user.toString() !== req.user.id) {
+      return res.status(403).json({
+        error: 'You are not allowed to update this post !',
+      });
+    }
+
     const value = await updatePostSchema.validateAsync(body);
 
     await Post.updateOne({
@@ -123,6 +129,12 @@ export async function destroy(req, res) {
     if (!post) {
       return res.status(404).json({
         error: 'Post not found !',
+      });
+    }
+
+    if (post.user.toString() !== req.user.id) {
+      return res.status(403).json({
+        error: 'You are not allowed to update this post !',
       });
     }
 
