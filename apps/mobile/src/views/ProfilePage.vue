@@ -15,7 +15,7 @@
                 <ion-card-title style="display: flex; justify-content: space-between; align-items: center;">
                   <div>{{ user?.username }}</div>
                   <div>
-                    <ion-button size="small">Update profile</ion-button>
+                    <ion-button size="small" @click="openUpdateProfileModal">Update profile</ion-button>
                     <ion-button size="small" color="danger" @click="logout">Logout</ion-button>
                   </div>
                 </ion-card-title>
@@ -54,13 +54,15 @@ import {
   IonButton,
   IonText,
   IonProgressBar,
+  modalController,
 } from '@ionic/vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { computed, onMounted, ref } from 'vue';
 import axios from 'axios';
 import { API_POSTS_URL } from '../constants';
-import PostList from '../components/posts/PostList.vue';
+import PostList from '@/components/posts/PostList.vue';
+import UpdateProfileModal from '@/components/profile/UpdateProfileModal.vue';
 
 const store = useStore();
 const router = useRouter();
@@ -86,6 +88,13 @@ function getMyPosts() {
     .finally(() => {
       loadingMyPosts.value = false;
     });
+}
+
+async function openUpdateProfileModal() {
+  const modal = await modalController.create({
+    component: UpdateProfileModal,
+  });
+  modal.present();
 }
 
 onMounted(() => {
