@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "23cdb36c-da6f-4b85-b2aa-223feea82f3f",
+		"name": "supunreal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7106005"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"root@dev.com\",\n    \"username\": \"root\",\n    \"password\": \"Adminadmin0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"root@dev.com\",\n    \"password\": \"Adminadmin0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "whoami",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/auth/whoami",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth",
+								"whoami"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "comments",
+					"item": [
+						{
+							"name": "findAllCommentsForPost",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"posts",
+										"6490f6ca01dbce88a7ef37e2",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createComment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Super commentaire\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"posts",
+										"6490f6ca01dbce88a7ef37e2",
+										"comments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateComment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2/comments/6490fdb0340dd2051545a703",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"posts",
+										"6490f6ca01dbce88a7ef37e2",
+										"comments",
+										"6490fdb0340dd2051545a703"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroyComment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2/comments/6490fdb0340dd2051545a703",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"posts",
+										"6490f6ca01dbce88a7ef37e2",
+										"comments",
+										"6490fdb0340dd2051545a703"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getMyPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/posts/my-posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts",
+								"my-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts",
+								"6490f6ca01dbce88a7ef37e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Premier post",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Super description",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/noah/Images/Screenshot_20230529_170833.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3002/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/posts/6490f0ec88b2c12b2f969ad9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts",
+								"6490f0ec88b2c12b2f969ad9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/posts/6490f0ec88b2c12b2f969ad9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts",
+								"6490f0ec88b2c12b2f969ad9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFileForPost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/posts/6490f6ca01dbce88a7ef37e2/file/6490f6ca01dbce88a7ef37e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"posts",
+								"6490f6ca01dbce88a7ef37e2",
+								"file",
+								"6490f6ca01dbce88a7ef37e0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "friendships",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/64910996b71731b92fcf4252",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"64910996b71731b92fcf4252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/64910f547be5c76ecbbc3336/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"64910f547be5c76ecbbc3336",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deny",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/64910f547be5c76ecbbc3336/deny",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"64910f547be5c76ecbbc3336",
+								"deny"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/64910f547be5c76ecbbc3336",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"64910f547be5c76ecbbc3336"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllInvitations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/invitations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"invitations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/friendships/requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"friendships",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "conversations",
+			"item": [
+				{
+					"name": "messages",
+					"item": [
+						{
+							"name": "findAllMessagesForConversation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3004/conversations/6491185df36c8168c88b2eef/messages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"conversations",
+										"6491185df36c8168c88b2eef",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createMessage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Message 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/conversations/64911ee4578d81c403316c24/messages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"conversations",
+										"64911ee4578d81c403316c24",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateMessage",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"update\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/conversations/6491185df36c8168c88b2eef/messages/64911c5c2a36cc7adeb65e31",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"conversations",
+										"6491185df36c8168c88b2eef",
+										"messages",
+										"64911c5c2a36cc7adeb65e31"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroyMessage",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3004/conversations/6491185df36c8168c88b2eef/messages/64911c5c2a36cc7adeb65e31",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"conversations",
+										"6491185df36c8168c88b2eef",
+										"messages",
+										"64911c5c2a36cc7adeb65e31"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/conversations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/conversations/6491179b16f74d0109e6a823",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"conversations",
+								"6491179b16f74d0109e6a823"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/conversations/64910996b71731b92fcf4252",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"conversations",
+								"64910996b71731b92fcf4252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/conversations/64911ee4578d81c403316c24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"conversations",
+								"64911ee4578d81c403316c24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
