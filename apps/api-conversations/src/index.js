@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import {setupDatabase} from "@supunreal/database";
 import dotenv from 'dotenv';
 import conversationRouter from "./router/conversation.js";
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
   app.use(helmet());
   app.use(cookieParser());
+  app.use(cors());
 
   const DATABASE_URL = process.env.DATABASE_URL;
   await setupDatabase(DATABASE_URL);
