@@ -1,6 +1,6 @@
-import {Post, File} from "@supunreal/database";
-import {postMapper} from "@supunreal/mapper";
-import {createPostSchema, updatePostSchema} from "@supunreal/validation";
+import { Post, File } from "@supunreal/database";
+import { postMapper } from "@supunreal/mapper";
+import { createPostSchema, updatePostSchema } from "@supunreal/validation";
 import fs from "fs";
 import axios from "axios";
 
@@ -13,6 +13,16 @@ const population = [
   },
 ];
 
+export async function getMyPosts(req, res) {
+  const posts = await Post.find({
+    user: req.user.id,
+  }).populate(population);
+
+  return res.status(200).json({
+    data: posts.map(post => postMapper(post)),
+  });
+}
+
 export async function findAll(req, res) {
   const posts = await Post.find().populate(population);
 
@@ -22,7 +32,7 @@ export async function findAll(req, res) {
 }
 
 export async function findOne(req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
 
   const post = await Post.findById(id).populate(population);
 
@@ -84,7 +94,7 @@ export async function create(req, res) {
 }
 
 export async function update(req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
   const body = req.body;
 
   try {
@@ -121,7 +131,7 @@ export async function update(req, res) {
 }
 
 export async function destroy(req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
 
   try {
     const post = await Post.findById(id);
