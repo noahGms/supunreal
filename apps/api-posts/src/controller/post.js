@@ -24,7 +24,7 @@ export async function findAll(req, res) {
 export async function findOne(req, res) {
   const {id} = req.params;
 
-  const post = await Post.findById(id);
+  const post = await Post.findById(id).populate(population);
 
   if (!post) {
     return res.status(404).json({
