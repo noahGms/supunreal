@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 export {User} from './models/user.js';
 export {Post} from './models/post.js';
 export {File} from './models/file.js';
+export {Comment} from './models/comment.js';
 
 export async function setupDatabase(databaseUrl) {
   try {

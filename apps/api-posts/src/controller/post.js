@@ -105,7 +105,7 @@ export async function update(req, res) {
     const value = await updatePostSchema.validateAsync(body);
 
     await Post.updateOne({
-      _id: id,
+      _id: post._id,
     }, {
       $set: value,
     });
@@ -134,7 +134,7 @@ export async function destroy(req, res) {
 
     if (post.user.toString() !== req.user.id) {
       return res.status(403).json({
-        error: 'You are not allowed to update this post !',
+        error: 'You are not allowed to delete this post !',
       });
     }
 
